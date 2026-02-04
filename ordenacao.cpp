@@ -26,9 +26,17 @@ void selecao(int a[], unsigned int t){
 
 
 void insercao(int a[], unsigned int t){
-    int x, aux;
-    for(int i=1; i<t-1; i++){
-        
+    for(int i = 1; i<t; i++){
+        int atual = a[i]; // valor atual a ser (ou não) reposicionado
+        int j = i-1;
+
+        // Deslocamento dos elementos entre a[0] e a[i-1] que são maiores o valor atual para uma posição à frente de sua posição atual
+        while(j >= 0 && a[j] > aux){
+            a[j+1] = a[j];
+            j = j-1;
+        }
+
+        a[j+1] = aux; // inserção do auxiliar na posição correta
     }
 }
 
